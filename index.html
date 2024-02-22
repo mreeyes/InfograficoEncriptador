@@ -35,8 +35,20 @@
           acentos
         </p>
         <div class="contenedor">
-          <input class="Encriptar" type="button" value="Encriptar" />
-          <input class="Desencriptar" type="button" value="Desencriptar" />
+          <button
+            onclick="EncriptarTexto();"
+            class="Encriptar"
+            type="button"
+            value="Encriptar">
+            Encriptar
+          </button>
+          <button
+            onclick="DesencriptarTexto();"
+            class="Desencriptar"
+            type="button"
+            value="Desencriptar">
+            Desencriptar
+          </button>
         </div>
       </div>
       <div class="input-containerderecho">
@@ -45,8 +57,15 @@
           class="input-Desencriptador"
           id="textoDesencriptado"
           disabled />
-        <input class="Copiar" type="button" value="Copiar" />
+        <button
+          onclick="CopiarTexto();"
+          class="Copiar"
+          type="button"
+          value="Copiar">
+          Copiar
+        </button>
       </div>
     </main>
+    <script src="encriptador.js"></script>
   </body>
 </html>

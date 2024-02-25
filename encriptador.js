@@ -1,5 +1,7 @@
-let EntradaDeTexto = document.querySelector("#EntradaTexto");
-let SalidaDeTexto = document.querySelector("#SalidaTexto");
+const EntradaDeTexto = document.querySelector("#EntradaTexto");
+const SalidaDeTexto = document.querySelector("#SalidaTexto");
+const imagenMostrada = document.querySelector("#imagenResultado"); // Mueve la selección de la imagen fuera del bucle
+const TextoOculto = document.querySelector(".TextoNoEncontrado"); // Mueve la selección del texto fuera del bucle
 
 let Lista_Encriptada = [
   ["e", "enter"], //indice 0 (posicion 0 y 1)
@@ -10,13 +12,21 @@ let Lista_Encriptada = [
 ];
 //botones
 function EncriptarTexto() {
-  let textoDesencriptado = Encriptacion(EntradaDeTexto.value);
-  SalidaDeTexto.value = textoDesencriptado;
+  if (verificarTextoIngresado()) {
+    return; // No hace nada más si no se ingresó texto
+  } else {
+    let textoDesencriptado = Encriptacion(EntradaDeTexto.value);
+    SalidaDeTexto.value = textoDesencriptado;
+  }
 }
 
 function DesencriptarTexto() {
-  let textoEncriptado = Descriptacion(EntradaDeTexto.value);
-  SalidaDeTexto.value = textoEncriptado;
+  if (verificarTextoIngresado()) {
+    return; // No hace nada más si no se ingresó texto
+  } else {
+    let textoEncriptado = Descriptacion(EntradaDeTexto.value);
+    SalidaDeTexto.value = textoEncriptado;
+  }
 }
 
 //funciones
@@ -44,3 +54,37 @@ function Descriptacion(textoEncriptado) {
   }
   return textoEncriptado;
 }
+
+function verificarTextoIngresado() {
+  let textoIngresado = EntradaDeTexto.value;
+  if (textoIngresado.trim() === "") {
+    imagenMostrada.src = "imagenes/Muñeco.png"; // Coloca la ruta de tu imagen vacía
+    imagenMostrada.style.display = "block"; // Asegúrate de mostrar la imagen si no hay texto
+    TextoOculto.style.display = "block";
+    limpiarTexto();
+    return true; // Indica que no se ingresó texto
+  } else {
+    imagenMostrada.style.display = "none"; // Oculta la imagen si hay texto
+    TextoOculto.style.display = "none";
+    return false; // Indica que se ingresó texto
+  }
+}
+
+function CopiarTexto() {
+  var SalidaDeTexto = document.getElementById("SalidaTexto");
+  navigator.clipboard
+    .writeText(SalidaDeTexto.value)
+    .then(() => {
+      alert("Texto copiado al portapapeles");
+    })
+    .catch((err) => {
+      alert("No se copio correctamente el texto");
+    });
+}
+
+function limpiarTexto() {
+  document.querySelector("#EntradaTexto").value = "";
+  document.querySelector("#SalidaTexto").value = "";
+}
+//al reiniciar la pagina se limpia el texto
+limpiarTexto();

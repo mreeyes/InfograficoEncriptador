@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -25,11 +25,11 @@
     </header>
     <main class="contenedor-principal">
       <div class="input-containerizquierdo">
-        <input
+        <textarea
           type="text"
           class="input-Encriptador"
           id="EntradaTexto"
-          placeholder="Ingrese el texto aquí" />
+          placeholder="Ingrese el texto aquí"></textarea>
         <p class="mensajedeadvertencia">
           <i class="fas fa-exclamation-circle"></i> Solo letras minúsculas y sin
           acentos
@@ -52,11 +52,18 @@
         </div>
       </div>
       <div class="input-containerderecho">
-        <input
+        <textarea
           type="text"
           class="input-Desencriptador"
           id="SalidaTexto"
-          disabled />
+          disabled></textarea>
+        <div class="TextoNoEncontrado">
+          <p id="parrafo1">Ningún mensaje fue encontrado.</p>
+          <p id="parrafo2">
+            Ingresa el texto que desees encriptar o desencriptar.
+          </p>
+        </div>
+        <img src="" id="imagenResultado" />
         <button
           onclick="CopiarTexto();"
           class="Copiar"

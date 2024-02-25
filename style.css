@@ -12,6 +12,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column; /* Coloca los elementos en columna */
+  font-family: "Inter", sans-serif;
 }
 .contenedor-principal {
   width: 1200px;
@@ -20,14 +21,12 @@ body {
   display: flex;
 }
 header {
-  padding: 20px 0;
-  width: 100%; /* Ancho completo del header */
-}
-
-.encabezado {
   width: 1200px;
+  position: relative;
+}
+.logo-blanco {
   position: absolute;
-  margin: 0 0 0 35px;
+  left: -50px;
 }
 
 .mensajedeadvertencia {
@@ -41,8 +40,7 @@ header {
 }
 .input-containerderecho {
   display: inline-block;
-  justify-content: center; /* Centra los elementos horizontalmente */
-  align-items: center; /* Centra los elementos verticalmente */
+  position: relative;
 }
 
 .contenedor {
@@ -53,11 +51,14 @@ header {
   margin: 10px;
   width: 100%; /* Restamos 10px para el padding y el borde */
   height: 410px;
-  text-align: center;
-  font-size: 25px;
+  padding: 25px;
+
+  font-size: 20px;
   border-style: none;
   color: #0a3871;
   background-color: #e5e5e5;
+  resize: none;
+  font-family: "Inter", sans-serif;
 }
 
 .input-Encriptador:hover {
@@ -105,18 +106,49 @@ header {
 
 .input-Desencriptador {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  margin: 0 70px 0 70px;
+  margin: 0 70px 0 45px;
   width: 100%; /* Restamos 10px para el padding y el borde */
   border-radius: 32px;
   height: 100%;
-  text-align: center;
-  font-size: 25px;
+  padding: 25px;
+  font-size: 20px;
   border-style: none;
   background-color: white;
+  resize: none;
+  font-family: "Inter", sans-serif;
 }
+.input-containerderecho img {
+  position: absolute;
+  right: 75px;
+  height: 45%;
+  width: 55%;
+  bottom: 245px;
+  display: none;
+}
+
+.TextoNoEncontrado {
+  position: absolute;
+  text-align: center;
+  bottom: 136px;
+  left: 143px;
+  right: 45px;
+  display: none;
+}
+#parrafo1 {
+  font-size: 22px;
+  color: #343a40;
+  font-weight: 600;
+  margin: 0 0 0 0;
+}
+#parrafo2 {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #495057;
+}
+
 .Copiar {
   position: absolute;
-  width: 328px;
+  width: 330px;
   padding: 25px 0;
   font-size: 20px;
   border-radius: 24px 24px 24px 24px;
@@ -125,7 +157,8 @@ header {
   font-style: bold;
   cursor: pointer;
   border-color: #0a3871;
-  margin: -100px 0 0 125px;
+  left: 115px;
+  top: 445px;
 }
 
 .Copiar:hover {

@@ -58,10 +58,15 @@ function Descriptacion(textoEncriptado) {
 function verificarTextoIngresado() {
   let textoIngresado = EntradaDeTexto.value;
   if (textoIngresado.trim() === "") {
-    imagenMostrada.src = "imagenes/Muñeco.png"; // Coloca la ruta de tu imagen vacía
-    imagenMostrada.style.display = "block"; // Asegúrate de mostrar la imagen si no hay texto
-    TextoOculto.style.display = "block";
-    limpiarTexto();
+    if (window.innerWidth > 375) {
+      imagenMostrada.src = "imagenes/Muñeco.png"; // Coloca la ruta de tu imagen vacía
+      imagenMostrada.style.display = "block"; // Asegúrate de mostrar la imagen si no hay texto
+      TextoOculto.style.display = "block";
+      limpiarTexto();
+    } else if (window.innerWidth <= 375) {
+      imagenMostrada.style.display = "none"; // Oculta la imagen si hay texto
+      TextoOculto.style.display = "block";
+    }
     return true; // Indica que no se ingresó texto
   } else {
     imagenMostrada.style.display = "none"; // Oculta la imagen si hay texto

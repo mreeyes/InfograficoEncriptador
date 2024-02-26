@@ -74,7 +74,7 @@ header {
 .Encriptar {
   width: 328px;
   padding: 25px 0;
-  margin: 0 0 10px 15px;
+  margin: 0 0 10px 20px;
   font-size: 20px;
   border-radius: 24px 24px 24px 24px;
   border: none;
@@ -163,4 +163,95 @@ header {
 
 .Copiar:hover {
   transform: scale(1.04);
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    width: 375px;
+  }
+
+  header {
+    width: 370px;
+    position: relative;
+    display: block;
+    height: 85px;
+  }
+  .logo-blanco {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: block;
+    left: 20px;
+    top: 25px;
+  }
+  .contenedor-principal {
+    width: 370px;
+    height: 812px;
+    position: relative;
+    display: block;
+  }
+
+  .input-Encriptador {
+    margin-top: 50px;
+    width: auto;
+    height: 200px;
+    padding: 25px;
+    font-size: 20px;
+    border-style: none;
+    color: #0a3871;
+    background-color: #e5e5e5;
+    resize: none;
+    font-family: "Inter", sans-serif;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .input-Desencriptador {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    margin: 0 15px 0 20px;
+    width: 328px;
+    border-radius: 32px;
+    height: 220px;
+    padding: 20px;
+    font-size: 20px;
+    border-style: none;
+    background-color: white;
+    resize: none;
+    font-family: "Inter", sans-serif;
+  }
+  .mensajedeadvertencia {
+    margin: 5px 25px;
+    font-size: 15px;
+    color: #495057;
+    text-align: center;
+  }
+  .input-containerderecho {
+    display: block;
+    width: 328px;
+    margin-top: 25px;
+    position: relative;
+  }
+  .Copiar {
+    display: none;
+  }
+  .TextoNoEncontrado {
+    position: absolute;
+    text-align: center;
+    bottom: 70px;
+    left: 90px;
+    display: none;
+  }
+  #parrafo1 {
+    font-size: 22px;
+    color: #343a40;
+    font-weight: 600;
+    margin: 0 0 0 0;
+  }
+  #parrafo2 {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #495057;
+  }
+  .input-containerderecho img {
+    display: none;
+  }
 }
